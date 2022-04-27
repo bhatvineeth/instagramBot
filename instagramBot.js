@@ -35,6 +35,12 @@ const login = async (username, password) => {
 	// wait for the page to load to new url and click on "Not now" to save password
 	await page.waitForNavigation({waitUntil: 'networkidle2'})
 	await page.click("#react-root > section > main > div > div > div > div > button")
+
+	//click on "Not now" for notification
+	await page.waitForSelector("body > div.RnEpo.Yx5HN > div").then(()=>{
+		page.click("body > div.RnEpo.Yx5HN > div > div > div > div.mt3GC > button.aOOlW.HoLwm")
+	})
+
 	
 }
 
